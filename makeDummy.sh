@@ -22,15 +22,15 @@ while getopts ":h:w:" OPT ; do
    esac
 done
 
-# Download image from lorempixel
-wget http://lorempixel.com/${HEIGHT}/${WIDTH}/ -O dummy.jpeg
+# Download image from placehold.jp
+wget http://placehold.jp/${HEIGHT}x${WIDTH}.png -O dummy.png
 
 # Make dummy text
 cat /dev/urandom | LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 1048218 | head -n 1 > dummy.txt
 
 # Insert comment to image
-exiftool dummy.jpeg -comment\<=dummy.txt
+exiftool dummy.png -comment\<=dummy.txt
 
 # Remove temporary files
-rm dummy.jpeg_original
+rm dummy.png_original
 rm dummy.txt
