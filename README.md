@@ -1,2 +1,3 @@
 # make-dummy-file
-make dummy file script
+
+make dummy file script for macOS
