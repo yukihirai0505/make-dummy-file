@@ -8,9 +8,9 @@ Usage:
     sh ./$(basename ${0}) [<options>]
 
 Options:
-    -h, -height       set image height (default 200)
-    -w, -width        set image width  (default 200)
-    -s, -size         set image size   (default 1048218)
+    -h                set image height (default 200)
+    -w                set image width  (default 200)
+    -s                set image size   (default 1048218)
 EOF
 }
 
