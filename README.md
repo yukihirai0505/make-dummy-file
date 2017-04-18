@@ -11,7 +11,7 @@ and then it will create `dummy.png` file.
 ## Option
 
 ```
--h ... Image Height
--w ... Image Width
--s ... Image Size(byte)
+-h ... Image Height (default 200)
+-w ... Image Width (default 200)
+-s ... Image Size (default 1048218 byte)
 ```
