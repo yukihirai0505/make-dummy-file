@@ -15,3 +15,6 @@ and then it will create `dummy.png` file.
 -w ... Image Width (default 200)
 -s ... Image Size (default 1048218 byte)
 ```
+## Example
+
+`sh ./makeDummy.sh -h 300 -w 300 -s 2048218`
