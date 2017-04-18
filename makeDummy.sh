@@ -1,6 +1,29 @@
 #!/bin/sh
 
-echo args=$@
+function usage {
+    cat <<EOF
+$(basename ${0}) is a tool for make dummy image file.
+
+Usage:
+    sh ./$(basename ${0}) [<options>]
+
+Options:
+    -h, -height       set image height (default 200)
+    -w, -width        set image width  (default 200)
+    -s, -size         set image size   (default 1048218)
+EOF
+}
+
+RED=31
+GREEN=32
+YELLOW=33
+BLUE=34
+
+function cecho {
+    COLOR=$1
+    shift
+    echo "\033[${COLOR}m$@\033[m"
+}
 
 HEIGHT=200
 WIDTH=200
@@ -10,21 +33,20 @@ while getopts ":h:w:s:" OPT ; do
   case $OPT in
     # HEIGHT
     h)
-      echo $OPT
-      echo $OPTARG
       HEIGHT=$OPTARG
       ;;
     # WIDTH
     w)
-      echo $OPT
-      echo $OPTARG
       WIDTH=$OPTARG
       ;;
     # SIZE
     s)
-      echo $OPT
-      echo $OPTARG
       SIZE=$OPTARG
+      ;;
+    *)
+      cecho $RED "[ERROR] Invalid subcommand '${1}'"
+      usage
+      exit 1
       ;;
    esac
 done
