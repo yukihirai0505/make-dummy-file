@@ -1,9 +1,17 @@
-# make-dummy-file
+## Make a dummy image file
 
-make dummy file script for macOS
+make a dummy file script for macOS
 
-# Usage
+## Usage
 
 `sh ./makeDummy.sh`
 
 and then it will create `dummy.png` file.
+
+## Option
+
+```
+-h ... Image Height
+-w ... Image Width
+-s ... Image Size(byte)
+```
