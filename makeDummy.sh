@@ -1,5 +1,28 @@
 #!/bin/sh
 
+set -e
+set -u
+
+has() {
+  type "$1" > /dev/null 2>&1
+}
+
+# Homebrew install & update
+if ! has brew; then
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  brew update
+fi
+
+# wget install
+if ! has wget; then
+  brew install wget
+fi
+
+# exiftool install
+if ! has exiftool; then
+  brew install exiftool
+fi
+
 function usage {
     cat <<EOF
 $(basename ${0}) is a tool for make dummy image file.
